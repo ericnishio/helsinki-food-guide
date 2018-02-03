@@ -4,6 +4,15 @@
       "name": "Manhattan Steak House",
       "address": "Eteläesplanadi 24, 00130 Helsinki",
       "website": "http://manhattansteakhouse.fi",
+      "hours": {
+        "monday": ["10:30", "23:00"],
+        "tuesday": ["10:30", "23:00"],
+        "wednesday": ["10:30", "00:00"],
+        "thursday": ["10:30", "00:00"],
+        "friday": ["10:30", "00:00"],
+        "saturday": ["11:00", "00:00"],
+        "sunday": ["12:00", "23:00"]
+      },
       "dishes": [
         {
           "name": "Manhattan Steak",
@@ -11,10 +20,12 @@
           "prices": [
             {
               "price": 31.50,
+              "currency": "EUR",
               "description": "180g"
             },
             {
               "price": 42.50,
+              "currency": "EUR",
               "description": "300g"
             }
           ],
@@ -28,18 +39,22 @@
           "prices": [
             {
               "price": 21.90,
+              "currency": "EUR",
               "description": "150g"
             },
             {
               "price": 26.90,
+              "currency": "EUR",
               "description": "200g"
             },
             {
               "price": 31.90,
+              "currency": "EUR",
               "description": "300g"
             },
             {
               "price": 44.90,
+              "currency": "EUR",
               "description": "500g"
             }
           ],
