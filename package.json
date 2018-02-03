@@ -1,0 +1,24 @@
+{
+  "name": "helsinki-food-guide",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "material-ui": "next",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.0",
+    "styled-components": "^3.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-plugin-module-resolver": "^3.0.0",
+    "eslint": "^4.16.0",
+    "eslint-plugin-react": "^7.6.1"
+  }
+}
