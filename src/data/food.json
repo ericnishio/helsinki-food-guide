@@ -1,0 +1,51 @@
+{
+  "restaurants": [
+    {
+      "name": "Manhattan Steak House",
+      "address": "Eteläesplanadi 24, 00130 Helsinki",
+      "website": "http://manhattansteakhouse.fi",
+      "dishes": [
+        {
+          "name": "Manhattan Steak",
+          "description": "Beef tenderloin served with garlic butter, asparagus, and french fries or garlic potatoes. Medium rare recommended.",
+          "prices": [
+            {
+              "price": 31.50,
+              "description": "180g"
+            },
+            {
+              "price": 42.50,
+              "description": "300g"
+            }
+          ],
+          "photos": [
+            "http://example.com/foo.jpg"
+          ]
+        },
+        {
+          "name": "Grilled Steak",
+          "description": "Sirloin steak with french fries and garlic butter",
+          "prices": [
+            {
+              "price": 21.90,
+              "description": "150g"
+            },
+            {
+              "price": 26.90,
+              "description": "200g"
+            },
+            {
+              "price": 31.90,
+              "description": "300g"
+            },
+            {
+              "price": 44.90,
+              "description": "500g"
+            }
+          ],
+          "photos": []
+        }
+      ]
+    }
+  ]
+}
