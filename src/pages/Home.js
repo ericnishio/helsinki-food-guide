@@ -1,21 +1,19 @@
 import React, {Component} from 'react'
-import Grid from 'material-ui/Grid'
-import Typography from 'material-ui/Typography'
-import Button from 'material-ui/Button'
+
+import {Row, Content} from '../common/components/Grid'
+import {Heading} from '../common/components/Typography'
 
 class Home extends Component {
   render() {
     return (
-      <Grid container spacing={40}>
-        <Grid item xs>
-          <Typography noWrap>
-            Foo bar baz.
-          </Typography>
-          <Button raised color="primary">
-            OK
-          </Button>
-        </Grid>
-      </Grid>
+      <Row>
+        <Content>
+          <Heading>
+            Know exactly what to order.<br />
+            Featuring only the best dishes in Helsinki.
+          </Heading>
+        </Content>
+      </Row>
     )
   }
 }
