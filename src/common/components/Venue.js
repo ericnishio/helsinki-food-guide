@@ -68,7 +68,6 @@ const Info = styled.div`
   flex-direction: column;
 
   @media (max-width: ${TABLET_MAX_WIDTH}) {
-    text-align: center;
     margin-bottom: 10px;
   }
 `
@@ -78,8 +77,8 @@ const Actions = styled.div`
   align-items: center;
 
   @media (max-width: ${TABLET_MAX_WIDTH}) {
-    justify-content: center;
     font-size: ${SMALL_FONT_SIZE};
+    margin-top: 10px;
   }
 `
 

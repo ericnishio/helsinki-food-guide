@@ -17,14 +17,13 @@ const Dish = ({dish, restaurant}) =>
         <Price>from {formatPrice(dish.price, 'EUR')}</Price>
       </Header>
       <Description>{dish.description}</Description>
-      <Venue
-        name={restaurant.name}
-        address={restaurant.address}
-        website={restaurant.website}
-        style={{
-          marginTop: '20px',
-        }}
-      />
+      <VenueContainer>
+        <Venue
+          name={restaurant.name}
+          address={restaurant.address}
+          website={restaurant.website}
+        />
+      </VenueContainer>
     </Card>
     <Photo url={dish.photos[0]} />
   </Container>
@@ -120,6 +119,14 @@ const Description = styled.p`
 
   &:last-child {
     margin-bottom: 0;
+  }
+`
+
+const VenueContainer = styled.div`
+  margin-top: 20px;
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    margin-top: 0;
   }
 `
 

@@ -35,6 +35,7 @@ const Container = styled.div`
   padding-top: ${PADDING}; padding-bottom: ${PADDING};
 
   @media (max-width: ${TABLET_MAX_WIDTH}) {
+    margin-top: 80px;
     padding-top: ${PADDING_MOBILE}; padding-bottom: ${PADDING_MOBILE};
   }
 `
