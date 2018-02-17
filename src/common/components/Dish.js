@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import {formatPrice} from '../helpers'
 import {TABLET_MAX_WIDTH} from '../styles/responsive'
+import {LARGE_FONT_SIZE} from '../styles/fonts'
 import Card, {Heading} from './Card'
 import Venue from './Venue'
 import Icon from './Icon'
@@ -68,7 +69,7 @@ const PhotoContainer = styled.div`
 `
 
 const PHOTO_WIDTH = '380px'
-const PHOTO_HEIGHT = '190px'
+const PHOTO_HEIGHT = '200px'
 
 const PhotoBackground = styled.div`
   background-size: cover;
@@ -115,6 +116,7 @@ const Price = styled.div`
 
 const Description = styled.p`
   font-style: italic;
+  font-size: ${LARGE_FONT_SIZE};
   font-weight: 300;
 
   &:last-child {

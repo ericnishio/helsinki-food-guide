@@ -20,7 +20,7 @@ Card.propTypes = {
 }
 
 export const Heading = styled.h3`
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 400;
   margin: 0;
 `
