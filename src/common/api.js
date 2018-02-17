@@ -1,4 +1,5 @@
 import {createClient} from 'contentful'
+import {sortBy} from 'lodash'
 
 const client = createClient({
   space: '9jmm61ik3148',
@@ -11,7 +12,9 @@ export const loadDishes = async () => {
     order: 'fields.name',
   })
 
-  return parseDishes(response)
+  const dishes = parseDishes(response)
+
+  return sortBy(dishes, dish => dish.restaurant.name)
 }
 
 const parseDishes = (response) =>
