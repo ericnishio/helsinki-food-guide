@@ -2,19 +2,31 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, {keyframes} from 'styled-components'
 
+import {APP_BAR_HEIGHT} from '../components/AppBar'
 import {Pink} from '../styles/colors'
 
-const Spinner = ({style}) =>
-  <Container style={style}>
-    <Outer>
-      <Inner />
-      <Inner />
-      <Inner />
-      <Inner />
-    </Outer>
-  </Container>
+const Spinner = ({centerOfScreen = false, style}) => {
+  const halfWindowHeight = (window.innerHeight / 2) - APP_BAR_HEIGHT
+
+  const centeredStyle = {
+    marginTop: `${halfWindowHeight}px`,
+    marginBottom: `${halfWindowHeight}px`,
+  }
+
+  return (
+    <Container style={centerOfScreen ? {...centeredStyle, ...style} : style}>
+      <Outer>
+        <Inner />
+        <Inner />
+        <Inner />
+        <Inner />
+      </Outer>
+    </Container>
+  )
+}
 
 Spinner.propTypes = {
+  centerOfScreen: PropTypes.bool,
   style: PropTypes.object,
 }
 
