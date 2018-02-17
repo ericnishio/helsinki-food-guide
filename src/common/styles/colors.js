@@ -18,3 +18,4 @@ export const Purple = {
 
 export const BACKGROUND_COLOR = Purple.DARK
 export const TEXT_COLOR = Gray.DARK
+export const LINK_COLOR = Pink.MEDIUM

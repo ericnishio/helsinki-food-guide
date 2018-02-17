@@ -19,7 +19,7 @@ const AppBar = () =>
 
 const Container = styled.div`
   background-color: ${White.LIGHT};
-  padding-top: 15px; padding-bottom: 15px;
+  padding-top: 12px; padding-bottom: 12px;
 `
 
 export default AppBar
