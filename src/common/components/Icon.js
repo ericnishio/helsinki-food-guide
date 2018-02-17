@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Icon = ({name, size = 24, style}) =>
-  <i className="material-icons" style={{...style, fontSize: size}}>
+const Icon = ({name, size = 24, color = 'inherit', style}) =>
+  <i className="material-icons" style={{...style, color, fontSize: size}}>
     {name}
   </i>
 
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
-  size: PropTypes.oneOf([18, 24, 36, 48]),
+  size: PropTypes.number,
+  color: PropTypes.string,
   style: PropTypes.object,
 }
 

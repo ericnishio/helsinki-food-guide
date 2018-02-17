@@ -6,10 +6,11 @@ import {formatPrice} from '../helpers'
 import {TABLET_MAX_WIDTH} from '../styles/responsive'
 import Card, {Heading} from './Card'
 import Venue from './Venue'
+import Icon from './Icon'
 
 const Dish = ({dish, restaurant}) =>
   <Container>
-    <Card>
+    <Card style={{zIndex: 10}}>
       <HeadingRow>
         <Heading>{dish.name}</Heading>
         <Price>
@@ -26,10 +27,7 @@ const Dish = ({dish, restaurant}) =>
         }}
       />
     </Card>
-    {
-      Boolean(dish.photos[0]) &&
-      <Photo url={dish.photos[0]} alt={dish.name} />
-    }
+    <Photo url={dish.photos[0]} alt={dish.name} />
   </Container>
 
 Dish.propTypes = {
@@ -47,11 +45,17 @@ Dish.propTypes = {
 
 const Photo = ({url, alt}) =>
   <PhotoContainer>
-    <PhotoImage src={url} alt={alt} />
+    {
+      url
+        ? <PhotoBackground style={{backgroundImage: `url(${url})`}} title={alt} />
+        : <PhotoPlaceholder>
+          <Icon name="restaurant" size={80} color="#3c3848" />
+        </PhotoPlaceholder>
+    }
   </PhotoContainer>
 
 Photo.propTypes = {
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
   alt: PropTypes.string.isRequired,
 }
 
@@ -64,9 +68,21 @@ const PhotoContainer = styled.div`
   }
 `
 
-const PhotoImage = styled.img`
-  height: 180px;
-  width: auto;
+const PHOTO_WIDTH = '380px'
+const PHOTO_HEIGHT = '190px'
+
+const PhotoBackground = styled.div`
+  background-size: cover;
+  width: ${PHOTO_WIDTH};
+  height: ${PHOTO_HEIGHT};
+`
+
+const PhotoPlaceholder = styled.div`
+  align-items: center; justify-content: center;
+  background-color: #423e4c;
+  display: flex;
+  width: ${PHOTO_WIDTH};
+  height: ${PHOTO_HEIGHT};
 `
 
 const Container = styled.div`
