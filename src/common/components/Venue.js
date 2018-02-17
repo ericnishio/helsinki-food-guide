@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import {addressToGoogleMapsUrl} from '../helpers'
 import Icon from './Icon'
 import {TABLET_MAX_WIDTH} from '../styles/responsive'
+import {SMALL_FONT_SIZE} from '../styles/fonts'
 
 const Venue = ({name, address, website, style}) =>
   <Container style={style}>
@@ -78,7 +79,7 @@ const Actions = styled.div`
 
   @media (max-width: ${TABLET_MAX_WIDTH}) {
     justify-content: center;
-    font-size: 13px;
+    font-size: ${SMALL_FONT_SIZE};
   }
 `
 

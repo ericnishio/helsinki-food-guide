@@ -5,7 +5,7 @@ import {injectGlobal} from 'styled-components'
 import App from './bootstrap/App'
 import registerServiceWorker from './bootstrap/registerServiceWorker'
 import {BACKGROUND_COLOR, TEXT_COLOR, LINK_COLOR} from './common/styles/colors'
-import {PRIMARY_FONT} from './common/styles/fonts'
+import {PRIMARY_FONT, MEDIUM_FONT_SIZE} from './common/styles/fonts'
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
@@ -19,6 +19,7 @@ injectGlobal`
   body {
     background-color: ${BACKGROUND_COLOR};
     font-family: ${PRIMARY_FONT};
+    font-size: ${MEDIUM_FONT_SIZE};
     color: ${TEXT_COLOR};
     margin: 0;
   }
