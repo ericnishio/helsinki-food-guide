@@ -118,6 +118,7 @@ const Description = styled.p`
   font-style: italic;
   font-size: ${LARGE_FONT_SIZE};
   font-weight: 300;
+  line-height: 26px;
 
   &:last-child {
     margin-bottom: 0;
