@@ -5,19 +5,17 @@ import styled from 'styled-components'
 import {formatPrice} from '../helpers'
 import {TABLET_MAX_WIDTH} from '../styles/responsive'
 import {LARGE_FONT_SIZE} from '../styles/fonts'
-import Card, {Heading} from './Card'
+import Card, {Heading as Name} from './Card'
 import Venue from './Venue'
 import Icon from './Icon'
 
 const Dish = ({dish, restaurant}) =>
   <Container>
     <Card style={{zIndex: 10}}>
-      <HeadingRow>
-        <Heading>{dish.name}</Heading>
-        <Price>
-          from {formatPrice(dish.price, 'EUR')}
-        </Price>
-      </HeadingRow>
+      <Header>
+        <Name>{dish.name}</Name>
+        <Price>from {formatPrice(dish.price, 'EUR')}</Price>
+      </Header>
       <Description>{dish.description}</Description>
       <Venue
         name={restaurant.name}
@@ -90,7 +88,7 @@ const Container = styled.div`
   margin-bottom: 30px;
 `
 
-const HeadingRow = styled.div`
+const Header = styled.div`
   align-items: flex-end;
   display: flex;
   flex-direction: row;

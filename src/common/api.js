@@ -6,7 +6,10 @@ const client = createClient({
 })
 
 export const loadDishes = async () => {
-  const response = await client.getEntries({content_type: 'dish'})
+  const response = await client.getEntries({
+    content_type: 'dish',
+    order: 'fields.name',
+  })
 
   return parseDishes(response)
 }
