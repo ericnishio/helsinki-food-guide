@@ -29,6 +29,7 @@ const Container = styled.div`
   background-color: ${White.LIGHT};
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
 `
 
 const Stripe = styled.div`

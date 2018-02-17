@@ -6,6 +6,7 @@ import {formatPrice} from '../helpers'
 import {TABLET_MAX_WIDTH} from '../styles/responsive'
 import Card, {Heading} from './Card'
 import Venue from './Venue'
+import DUMMY_DISH_PHOTO from '../../assets/images/dishes/manhattan-steak.jpg'
 
 const Dish = ({dish, restaurant}) =>
   <Container>
@@ -26,6 +27,7 @@ const Dish = ({dish, restaurant}) =>
         }}
       />
     </Card>
+    <Photo url={DUMMY_DISH_PHOTO} alt={dish.name} />
   </Container>
 
 Dish.propTypes = {
@@ -44,7 +46,32 @@ Dish.propTypes = {
   }).isRequired,
 }
 
+const Photo = ({url, alt}) =>
+  <PhotoContainer>
+    <PhotoImage src={url} alt={alt} />
+  </PhotoContainer>
+
+Photo.propTypes = {
+  url: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+}
+
+const PhotoContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    display: none;
+  }
+`
+
+const PhotoImage = styled.img`
+  height: 180px;
+  width: auto;
+`
+
 const Container = styled.div`
+  display: flex;
   margin-bottom: 30px;
 `
 
