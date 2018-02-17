@@ -27,7 +27,7 @@ const Dish = ({dish, restaurant}) =>
         }}
       />
     </Card>
-    <Photo url={dish.photos[0]} alt={dish.name} />
+    <Photo url={dish.photos[0]} />
   </Container>
 
 Dish.propTypes = {
@@ -43,11 +43,11 @@ Dish.propTypes = {
   }).isRequired,
 }
 
-const Photo = ({url, alt}) =>
+const Photo = ({url}) =>
   <PhotoContainer>
     {
       url
-        ? <PhotoBackground style={{backgroundImage: `url(${url})`}} title={alt} />
+        ? <PhotoBackground style={{backgroundImage: `url(${url})`}} />
         : <PhotoPlaceholder>
           <Icon name="restaurant" size={80} color="#3c3848" />
         </PhotoPlaceholder>
@@ -56,7 +56,6 @@ const Photo = ({url, alt}) =>
 
 Photo.propTypes = {
   url: PropTypes.string,
-  alt: PropTypes.string.isRequired,
 }
 
 const PhotoContainer = styled.div`
