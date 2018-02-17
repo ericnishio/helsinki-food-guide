@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import {TABLET_MIN_WIDTH} from '../styles/responsive'
+import {TABLET_MAX_WIDTH} from '../styles/responsive'
 
 const Hero = ({children, style}) =>
   <Container style={style}>
@@ -18,9 +18,9 @@ const Container = styled.div`
   margin-top: 140px;
   margin-bottom: 60px;
 
-  @media (max-width: ${TABLET_MIN_WIDTH}) {
-    margin-top: 0;
-    margin-bottom: 0;
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    margin-top: 80px;
+    margin-bottom: 40px;
   }
 `
 

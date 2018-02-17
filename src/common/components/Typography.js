@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import {HEADING_FONT} from '../styles/fonts'
 import {White} from '../styles/colors'
-import {TABLET_MIN_WIDTH} from '../styles/responsive'
+import {TABLET_MAX_WIDTH} from '../styles/responsive'
 
 export const Heading = styled.h2`
   color: ${White.LIGHT};
@@ -12,8 +12,8 @@ export const Heading = styled.h2`
   font-style: normal;
   line-height: 55px;
 
-  @media (max-width: ${TABLET_MIN_WIDTH}) {
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
     font-size: 24px;
-    line-height: 32px;
+    line-height: 36px;
   }
 `

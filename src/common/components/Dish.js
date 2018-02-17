@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import {formatPrice} from '../helpers'
+import {TABLET_MAX_WIDTH} from '../styles/responsive'
 import Card, {Heading} from './Card'
 import Venue from './Venue'
 
@@ -51,6 +52,11 @@ const HeadingRow = styled.div`
   align-items: flex-end;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    align-items: baseline;
+    flex-direction: column;
+  }
 `
 
 const Price = styled.div`
@@ -59,6 +65,11 @@ const Price = styled.div`
   margin-bottom: 2px;
   margin-left: 10px;
   white-space: nowrap;
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    margin: 0;
+    margin-top: 3px;
+  }
 `
 
 const Description = styled.p`

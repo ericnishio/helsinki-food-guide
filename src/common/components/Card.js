@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import {White, Pink} from '../styles/colors'
+import {TABLET_MAX_WIDTH} from '../styles/responsive'
 
 const Card = ({stripeColor = Pink.MEDIUM, children, style}) =>
   <Container style={style}>
@@ -40,6 +41,10 @@ const Body = styled.div`
   flex-direction: column;
   flex-grow: 1;
   padding: 40px;
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    padding: 20px;
+  }
 `
 
 export default Card

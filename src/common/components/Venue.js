@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import {addressToGoogleMapsUrl} from '../helpers'
 import Icon from './Icon'
+import {TABLET_MAX_WIDTH} from '../styles/responsive'
 
 const Venue = ({name, address, website, style}) =>
   <Container style={style}>
@@ -55,16 +56,30 @@ const Container = styled.div`
   display: flex;
   font-weight: 400;
   justify-content: space-between;
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    flex-direction: column;
+  }
 `
 
 const Info = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    text-align: center;
+    margin-bottom: 10px;
+  }
 `
 
 const Actions = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    justify-content: center;
+    font-size: 13px;
+  }
 `
 
 const LinkText = styled.span`
