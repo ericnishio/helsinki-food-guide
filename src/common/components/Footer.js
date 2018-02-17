@@ -11,7 +11,7 @@ const Footer = () =>
       <Content>
         <Body>
           <Copyright>
-            &copy; {new Date().getFullYear()} Helsinki Food Guide
+            &copy; {new Date().getFullYear()} helsinkifoodguide.com
           </Copyright>
           <a href="https://www.contentful.com/" rel="nofollow noopener noreferrer" target="_blank">
             <img
@@ -42,7 +42,7 @@ const Container = styled.div`
 const Body = styled.div`
   align-items: center;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 `
 
 const Copyright = styled.div`
