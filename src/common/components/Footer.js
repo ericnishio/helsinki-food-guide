@@ -1,0 +1,46 @@
+import React from 'react'
+import styled from 'styled-components'
+
+import {Row, Content} from '../../common/components/Grid'
+import {TABLET_MAX_WIDTH} from '../styles/responsive'
+import {SMALL_FONT_SIZE} from '../styles/fonts'
+
+const Footer = () =>
+  <Container>
+    <Row>
+      <Content>
+        <Body>
+          <Copyright>
+            &copy; {new Date().getFullYear()} Helsinki Food Guide
+          </Copyright>
+        </Body>
+      </Content>
+    </Row>
+  </Container>
+
+const PADDING = '100px'
+const PADDING_MOBILE = '50px'
+
+const Container = styled.div`
+  background-color: #1f1f1f;
+  color: #c5c5c5;
+  font-weight: 300;
+  margin-top: 140px;
+  padding-top: ${PADDING}; padding-bottom: ${PADDING};
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    padding-top: ${PADDING_MOBILE}; padding-bottom: ${PADDING_MOBILE};
+  }
+`
+
+const Body = styled.div`
+  justify-content: center;
+  display: flex;
+`
+
+const Copyright = styled.div`
+  font-size: ${SMALL_FONT_SIZE};
+  text-transform: uppercase;
+`
+
+export default Footer
