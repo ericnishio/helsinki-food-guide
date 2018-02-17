@@ -8,6 +8,10 @@ export const addressToGoogleMapsUrl = (address) => {
   return `https://www.google.com/maps/place/${normalizedAddress}`
 }
 
+export const wait = (durationMs) => new Promise((resolve) =>
+  setTimeout(resolve, durationMs)
+)
+
 const currencyToSymbol = (currency) => {
   switch (currency) {
     case 'EUR':

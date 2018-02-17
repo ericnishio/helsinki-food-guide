@@ -17,9 +17,14 @@ const AppBar = () =>
     </Row>
   </Container>
 
+export const APP_BAR_HEIGHT = 67
+
 const Container = styled.div`
   background-color: ${White.LIGHT};
-  padding-top: 12px; padding-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  height: ${APP_BAR_HEIGHT}px;
+  justify-content: center;
 `
 
 export default AppBar

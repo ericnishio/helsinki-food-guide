@@ -4,6 +4,8 @@ import {Row, Content} from '../common/components/Grid'
 import Hero from '../common/components/Hero'
 import {Heading} from '../common/components/Typography'
 import Dish from '../common/components/Dish'
+import Spinner from '../common/components/Spinner'
+import {APP_BAR_HEIGHT} from '../common/components/AppBar'
 import {loadDishes} from '../common/api'
 
 class Home extends Component {
@@ -29,7 +31,14 @@ class Home extends Component {
     const {dishes} = this.state
 
     if (!dishes) {
-      return null // TODO: Spinner.
+      const halfWindowHeight = (window.innerHeight / 2) - APP_BAR_HEIGHT
+
+      return (
+        <Spinner style={{
+          marginTop: `${halfWindowHeight}px`,
+          marginBottom: `${halfWindowHeight}px`,
+        }} />
+      )
     }
 
     return (
