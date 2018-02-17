@@ -19,16 +19,15 @@ Spinner.propTypes = {
 }
 
 const Container = styled.div`
-  justify-content: center;
   display: flex;
   flex-grow: 1;
+  justify-content: center;
 `
 
 const Outer = styled.div`
   display: inline-block;
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: 64px; height: 64px;
 `
 
 const animation = keyframes`
@@ -42,15 +41,14 @@ const animation = keyframes`
 `
 
 const Inner = styled.div`
+  animation: ${animation} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border: 6px solid ${Pink.MEDIUM};
+  border-color: ${Pink.MEDIUM} transparent transparent transparent;
+  border-radius: 50%;
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 51px;
-  height: 51px;
-  border: 6px solid ${Pink.MEDIUM};
-  border-radius: 50%;
-  animation: ${animation} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: ${Pink.MEDIUM} transparent transparent transparent;
+  width: 51px; height: 51px;
 
   &:nth-child(1) {
     animation-delay: -0.45s;
