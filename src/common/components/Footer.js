@@ -13,6 +13,12 @@ const Footer = () =>
           <Copyright>
             &copy; {new Date().getFullYear()} Helsinki Food Guide
           </Copyright>
+          <a href="https://www.contentful.com/" rel="nofollow noopener noreferrer" target="_blank">
+            <img
+              src="https://images.contentful.com/fo9twyrwpveg/7Htleo27dKYua8gio8UEUy/0797152a2d2f8e41db49ecbf1ccffdaa/PoweredByContentful_DarkBackground_MonochromeLogo.svg"
+              style={{marginTop: '20px', maxWidth: '100px', width: '100%'}}
+              alt="Powered by Contentful" />
+          </a>
         </Body>
       </Content>
     </Row>
@@ -34,8 +40,9 @@ const Container = styled.div`
 `
 
 const Body = styled.div`
-  justify-content: center;
+  align-items: center;
   display: flex;
+  flex-direction: column
 `
 
 const Copyright = styled.div`

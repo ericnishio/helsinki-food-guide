@@ -6,7 +6,6 @@ import {formatPrice} from '../helpers'
 import {TABLET_MAX_WIDTH} from '../styles/responsive'
 import Card, {Heading} from './Card'
 import Venue from './Venue'
-import DUMMY_DISH_PHOTO from '../../assets/images/dishes/manhattan-steak.jpg'
 
 const Dish = ({dish, restaurant}) =>
   <Container>
@@ -14,7 +13,7 @@ const Dish = ({dish, restaurant}) =>
       <HeadingRow>
         <Heading>{dish.name}</Heading>
         <Price>
-          from {formatPrice(dish.price.value, dish.price.currency)}
+          from {formatPrice(dish.price, 'EUR')}
         </Price>
       </HeadingRow>
       <Description>{dish.description}</Description>
@@ -27,17 +26,17 @@ const Dish = ({dish, restaurant}) =>
         }}
       />
     </Card>
-    <Photo url={DUMMY_DISH_PHOTO} alt={dish.name} />
+    {
+      Boolean(dish.photos[0]) &&
+      <Photo url={dish.photos[0]} alt={dish.name} />
+    }
   </Container>
 
 Dish.propTypes = {
   dish: PropTypes.shape({
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    price: PropTypes.shape({
-      value: PropTypes.number.isRequired,
-      currency: PropTypes.string.isRequired,
-    }).isRequired,
+    price: PropTypes.number.isRequired,
   }).isRequired,
   restaurant: PropTypes.shape({
     name: PropTypes.string.isRequired,

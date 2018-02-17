@@ -4,10 +4,34 @@ import {Row, Content} from '../common/components/Grid'
 import Hero from '../common/components/Hero'
 import {Heading} from '../common/components/Typography'
 import Dish from '../common/components/Dish'
-import food from '../data/food.json'
+import {loadDishes} from '../common/api'
 
 class Home extends Component {
+  state = {
+    dishes: undefined,
+  }
+
+  componentDidMount() {
+    this.loadDishes()
+  }
+
+  loadDishes = async () => {
+    try {
+      const dishes = await loadDishes()
+
+      this.setState({dishes})
+    } catch (e) {
+      window.alert('Server error')
+    }
+  }
+
   render() {
+    const {dishes} = this.state
+
+    if (!dishes) {
+      return null // TODO: Spinner.
+    }
+
     return (
       <Row>
         <Content>
@@ -18,14 +42,12 @@ class Home extends Component {
             </Heading>
           </Hero>
           {
-            food.restaurants.map(restaurant =>
-              restaurant.dishes.map(dish =>
-                <Dish
-                  key={dish.name}
-                  dish={dish}
-                  restaurant={restaurant}
-                />
-              )
+            dishes.map(dish =>
+              <Dish
+                key={dish.name}
+                dish={dish}
+                restaurant={dish.restaurant}
+              />
             )
           }
         </Content>
