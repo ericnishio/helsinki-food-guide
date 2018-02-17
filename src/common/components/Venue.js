@@ -15,7 +15,7 @@ const Venue = ({name, address, website, style}) =>
       <Action url={addressToGoogleMapsUrl(address)} text="View on map" icon="room" />
       {
         Boolean(website) &&
-        <Action url={website} text="Visit website" icon="link" />
+        <Action url={website} text="Visit website" icon="link" iconStyle={{marginRight: '4px'}} />
       }
     </Actions>
   </Container>
@@ -27,9 +27,9 @@ Venue.propTypes = {
   style: PropTypes.object,
 }
 
-const Action = ({url, text, icon}) =>
+const Action = ({url, text, icon, iconStyle}) =>
   <Link href={url} target="_blank">
-    <Icon name={icon} />
+    <Icon name={icon} style={iconStyle} />
     <LinkText>{text}</LinkText>
   </Link>
 
@@ -37,6 +37,7 @@ Action.propTypes = {
   url: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   icon: PropTypes.string,
+  iconStyle: PropTypes.object,
 }
 
 const Link = styled.a`
