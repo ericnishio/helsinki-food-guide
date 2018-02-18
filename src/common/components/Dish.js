@@ -101,7 +101,7 @@ const Header = styled.div`
 const Price = styled.div`
   font-weight: 300;
   font-size: 20px;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   margin-left: 10px;
   white-space: nowrap;
 
