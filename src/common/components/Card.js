@@ -22,7 +22,13 @@ Card.propTypes = {
 export const Heading = styled.h3`
   font-size: 32px;
   font-weight: 400;
+  line-height: 42px;
   margin: 0;
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    font-size: 24px;
+    line-height: 34px;
+  }
 `
 
 const Container = styled.div`
@@ -34,7 +40,13 @@ const Container = styled.div`
 
 const Stripe = styled.div`
   background-color: ${props => props.color};
-  width: 10px;
+  max-width: 10px;
+  min-width: 10px;
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    max-width: 6px;
+    min-width: 6px;
+  }
 `
 
 const Body = styled.div`

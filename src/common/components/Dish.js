@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import {formatPrice} from '../helpers'
 import {TABLET_MAX_WIDTH} from '../styles/responsive'
-import {LARGE_FONT_SIZE} from '../styles/fonts'
+import {MEDIUM_FONT_SIZE, LARGE_FONT_SIZE} from '../styles/fonts'
 import Card, {Heading as Name} from './Card'
 import Venue from './Venue'
 import Icon from './Icon'
@@ -106,8 +106,9 @@ const Price = styled.div`
   white-space: nowrap;
 
   @media (max-width: ${TABLET_MAX_WIDTH}) {
+    font-size: 18px;
     margin: 0;
-    margin-top: 3px;
+    margin-top: 5px;
   }
 `
 
@@ -119,6 +120,11 @@ const Description = styled.p`
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    font-size: ${MEDIUM_FONT_SIZE};
+    line-height: 24px;
   }
 `
 

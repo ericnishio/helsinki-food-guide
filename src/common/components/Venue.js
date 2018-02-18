@@ -78,7 +78,6 @@ const Actions = styled.div`
 
   @media (max-width: ${TABLET_MAX_WIDTH}) {
     font-size: ${SMALL_FONT_SIZE};
-    margin-top: 10px;
   }
 `
 
@@ -86,13 +85,20 @@ const LinkText = styled.span`
 `
 
 const Name = styled.div`
+  font-size: 14px;
   margin-bottom: 5px;
   letter-spacing: 1px;
+  line-height: 22px;
   text-transform: uppercase;
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    margin-bottom: 0;
+  }
 `
 
 const Address = styled.div`
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 21px;
 `
 
 export default Venue
