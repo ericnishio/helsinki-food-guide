@@ -1,5 +1,5 @@
-helsinkifoodguide
-=================
+helsinki-food-guide
+===================
 
 ## Setup
 
