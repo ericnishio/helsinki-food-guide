@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 import {Row, Content} from '../common/components/Grid'
 import {APP_BAR_HEIGHT} from '../common/components/AppBar'
@@ -11,8 +12,10 @@ const NotFound = () =>
   <Row>
     <Content>
       <Body>
-        <Image src={BROKEN_EGG} alt="Not found" />
-        <Heading>Oops...</Heading>
+        <LinkWrapper to="/">
+          <Image src={BROKEN_EGG} alt="Not found" />
+          <Heading>Oops...</Heading>
+        </LinkWrapper>
       </Body>
     </Content>
   </Row>
@@ -34,6 +37,11 @@ const Heading = styled.h2`
   @media (max-width: ${TABLET_MAX_WIDTH}) {
     display: none;
   }
+`
+
+const LinkWrapper = styled(Link)`
+  align-items: center; justify-content: center;
+  display: flex;
 `
 
 const Image = styled.img`
