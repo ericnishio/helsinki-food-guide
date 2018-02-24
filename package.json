@@ -14,10 +14,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "yarn build && yarn upload:clean && yarn upload:all && yarn upload:html",
+    "deploy": "yarn build && yarn s3:clean && yarn upload:all && yarn upload:html",
+    "s3:clean": "aws s3 rm s3://helsinkifoodguide.com --recursive",
     "upload:all": "aws s3 sync build s3://helsinkifoodguide.com --acl public-read",
     "upload:html": "aws s3 cp build/index.html s3://helsinkifoodguide.com --acl public-read --cache-control max-age=0",
-    "upload:clean": "aws s3 rm s3://helsinkifoodguide.com --recursive",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
