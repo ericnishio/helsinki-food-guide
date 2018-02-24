@@ -7,18 +7,16 @@ import Home from '../pages/Home'
 import NotFound from '../pages/NotFound'
 
 const Routes = () =>
-  <Fragment>
-    <Router>
-      <Fragment>
-        <AppBar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route component={NotFound} />
-        </Switch>
-        <Footer />
-      </Fragment>
-    </Router>
-  </Fragment>
+  <Router>
+    <Fragment>
+      <AppBar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route component={NotFound} />
+      </Switch>
+      <Footer />
+    </Fragment>
+  </Router>
 
 
 export default Routes
