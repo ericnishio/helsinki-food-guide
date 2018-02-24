@@ -51,6 +51,11 @@ const Link = styled.a`
   &:last-child {
     margin-right: 0;
   }
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    padding-left: 0; padding-right: 0;
+    margin-right: 20px;
+  }
 `
 
 const Container = styled.div`
