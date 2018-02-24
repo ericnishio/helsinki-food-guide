@@ -1,21 +1,18 @@
-helsinki-food-guide
-===================
+# helsinki-food-guide
 
 ## Setup
 
-```
+```bash
 yarn
 yarn start
 ```
 
 ## Deploy
 
-```
-cp .env.example .env
-```
+Install the AWS CLI by running `pip install awscli --upgrade --user`.
 
-Configure your `.env` file.
+Add your S3 access keys to `~/.aws/credentials`.
 
-```
+```bash
 yarn deploy
 ```
