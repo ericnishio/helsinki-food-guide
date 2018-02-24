@@ -117,6 +117,7 @@ const Description = styled.p`
   font-size: ${LARGE_FONT_SIZE};
   font-weight: 300;
   line-height: 26px;
+  margin-top: 1em; margin-bottom: 1em;
 
   &:last-child {
     margin-bottom: 0;

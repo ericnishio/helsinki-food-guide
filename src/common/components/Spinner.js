@@ -5,7 +5,7 @@ import styled, {keyframes} from 'styled-components'
 import {APP_BAR_HEIGHT} from '../components/AppBar'
 import {Pink} from '../styles/colors'
 
-const Spinner = ({centerOfScreen = false, style}) => {
+const Spinner = ({centerOfViewport = false, style}) => {
   const halfWindowHeight = (window.innerHeight / 2) - APP_BAR_HEIGHT
 
   const centeredStyle = {
@@ -14,7 +14,7 @@ const Spinner = ({centerOfScreen = false, style}) => {
   }
 
   return (
-    <Container style={centerOfScreen ? {...centeredStyle, ...style} : style}>
+    <Container style={centerOfViewport ? {...centeredStyle, ...style} : style}>
       <Outer>
         <Inner />
         <Inner />
@@ -26,7 +26,7 @@ const Spinner = ({centerOfScreen = false, style}) => {
 }
 
 Spinner.propTypes = {
-  centerOfScreen: PropTypes.bool,
+  centerOfViewport: PropTypes.bool,
   style: PropTypes.object,
 }
 

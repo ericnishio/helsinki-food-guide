@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import {White, Pink} from '../styles/colors'
 import {TABLET_MAX_WIDTH} from '../styles/responsive'
 
-const Card = ({stripeColor = Pink.MEDIUM, children, style}) =>
+const Card = ({stripeColor, children, style}) =>
   <Container style={style}>
     <Stripe color={stripeColor} />
     <Body>
@@ -35,11 +35,10 @@ const Container = styled.div`
   background-color: ${White.LIGHT};
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
 `
 
-const Stripe = styled.div`
-  background-color: ${props => props.color};
+export const Stripe = styled.div`
+  background-color: ${props => props.color || Pink.MEDIUM};
   max-width: 10px;
   min-width: 10px;
 

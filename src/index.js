@@ -33,4 +33,12 @@ injectGlobal`
       color: #d20074;
     }
   }
+
+  p {
+    margin-top: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 `
