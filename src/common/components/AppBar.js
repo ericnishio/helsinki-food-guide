@@ -11,7 +11,9 @@ const AppBar = () =>
     <Row>
       <Content>
         <Link to="/">
-          <Logo />
+          <H1>
+            <Logo />
+          </H1>
         </Link>
       </Content>
     </Row>
@@ -25,6 +27,10 @@ const Container = styled.div`
   flex-direction: column;
   height: ${APP_BAR_HEIGHT}px;
   justify-content: center;
+`
+
+const H1 = styled.h1`
+  margin: 0;
 `
 
 export default AppBar

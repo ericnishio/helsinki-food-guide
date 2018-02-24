@@ -8,8 +8,8 @@ export const Heading = styled.h2`
   color: ${White.LIGHT};
   font-family: ${HEADING_FONT};
   font-size: 42px;
-  font-weight: 400;
   font-style: normal;
+  font-weight: 400;
   line-height: 55px;
 
   @media (max-width: ${TABLET_MAX_WIDTH}) {
