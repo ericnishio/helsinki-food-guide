@@ -59,10 +59,6 @@ Photo.propTypes = {
 const PhotoContainer = styled.div`
   display: flex;
   align-items: center;
-
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
-    display: none;
-  }
 `
 
 const PHOTO_WIDTH = '380px'
@@ -72,6 +68,10 @@ const PhotoBackground = styled.div`
   background-size: cover;
   width: ${PHOTO_WIDTH};
   height: ${PHOTO_HEIGHT};
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    width: 100%;
+  }
 `
 
 const PhotoPlaceholder = styled.div`
@@ -80,11 +80,19 @@ const PhotoPlaceholder = styled.div`
   display: flex;
   width: ${PHOTO_WIDTH};
   height: ${PHOTO_HEIGHT};
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    width: 100%;
+  }
 `
 
 const Container = styled.div`
   display: flex;
   margin-bottom: 30px;
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    flex-direction: column-reverse;
+  }
 `
 
 const Header = styled.div`
