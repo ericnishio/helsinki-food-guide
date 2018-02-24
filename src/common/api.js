@@ -14,12 +14,12 @@ export const loadDishes = async () => {
     order: 'fields.name',
   })
 
-  const dishes = parseDishes(response)
+  const dishes = parseDishesResponse(response)
 
   return sortBy(dishes, dish => dish.restaurant.name)
 }
 
-const parseDishes = (response) =>
+const parseDishesResponse = (response) =>
   response.items.map(item => ({
     name: item.fields.name,
     description: item.fields.description,
