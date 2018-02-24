@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import AppBar from '../common/components/AppBar'
 import Footer from '../common/components/Footer'
@@ -11,8 +11,10 @@ const Routes = () =>
     <Router>
       <Fragment>
         <AppBar />
-        <Route exact path="/" component={Home} />
-        <Route path="*" component={NotFound} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route component={NotFound} />
+        </Switch>
         <Footer />
       </Fragment>
     </Router>
