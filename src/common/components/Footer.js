@@ -43,6 +43,7 @@ const Container = styled.div`
 const Body = styled.div`
   align-items: center;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
 `
 
