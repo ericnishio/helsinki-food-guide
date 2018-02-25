@@ -19,8 +19,7 @@ const Container = styled.div`
 
   @media (max-width: ${TABLET_MAX_WIDTH}) {
     margin-top: 80px; margin-bottom: 40px;
-    margin-left: 10px; margin-right: 10px;
-    text-align: center;
+    margin-right: 10px;
   }
 `
 
