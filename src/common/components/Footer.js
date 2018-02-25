@@ -11,7 +11,7 @@ const Footer = () =>
       <Content>
         <Body>
           <Copyright>
-            &copy; {new Date().getFullYear()} helsinkifoodguide.com
+            &copy; {new Date().getFullYear()} Eric Nishio
           </Copyright>
           <a href="https://www.contentful.com/" rel="nofollow noopener noreferrer" target="_blank">
             <img
