@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 import {White} from '../../common/styles/colors'
-import {DesktopOnly, MobileOnly, TABLET_MAX_WIDTH} from '../../common/styles/responsive'
+import {TABLET_MAX_WIDTH} from '../../common/styles/responsive'
 import {Row, Content} from '../../common/components/Grid'
 import Logo from './Logo'
 import FacebookShare from './FacebookShare'
@@ -19,12 +19,7 @@ const AppBar = () =>
             </H1>
           </Link>
           <Items>
-            <DesktopOnly>
-              <FacebookShare size="large" />
-            </DesktopOnly>
-            <MobileOnly>
-              <FacebookShare size="small" />
-            </MobileOnly>
+            <FacebookShare />
           </Items>
         </Inner>
       </Content>
