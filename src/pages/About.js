@@ -18,7 +18,7 @@ class About extends Component {
     this.loadContent()
   }
 
-  loadContent = async() => {
+  loadContent = async () => {
     try {
       const content = await loadAboutPage()
 
