@@ -1,5 +1,5 @@
 import {createClient} from 'contentful'
-import {sortBy} from 'lodash'
+import sortBy from 'lodash/sortBy'
 
 export const ABOUT_ENTRY_ID = '2Uqcv9yuQEIWoQu8SW4kAG'
 

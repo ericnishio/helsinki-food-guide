@@ -18,11 +18,13 @@
     "s3:clean": "aws s3 rm s3://helsinkifoodguide.com --recursive",
     "upload:all": "aws s3 sync build s3://helsinkifoodguide.com --acl public-read",
     "upload:html": "aws s3 cp build/index.html s3://helsinkifoodguide.com --acl public-read --cache-control max-age=0",
+    "analyze": "source-map-explorer build/static/js/main.*",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
     "eslint": "^4.16.0",
-    "eslint-plugin-react": "^7.6.1"
+    "eslint-plugin-react": "^7.6.1",
+    "source-map-explorer": "^1.5.0"
   }
 }

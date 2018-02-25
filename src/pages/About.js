@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {compact} from 'lodash'
+import compact from 'lodash/compact'
 
 import {Row, Content} from '../common/components/Grid'
 import Hero from '../common/components/Hero'
