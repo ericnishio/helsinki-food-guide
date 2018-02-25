@@ -1,7 +1,18 @@
 import {createClient} from 'contentful'
 import sortBy from 'lodash/sortBy'
 
+import {setLocalStorageValue, getLocalStorageValue} from './localStorage'
+
 export const ABOUT_ENTRY_ID = '2Uqcv9yuQEIWoQu8SW4kAG'
+
+const state = {
+  isOnline: navigator.onLine,
+}
+
+window.addEventListener('load', () => {
+  window.addEventListener('online', () => state.isOnline = navigator.onLine)
+  window.addEventListener('offline', () => state.isOnline = navigator.onLine)
+})
 
 const client = createClient({
   space: '9jmm61ik3148',
@@ -9,14 +20,22 @@ const client = createClient({
 })
 
 export const loadDishes = async () => {
+  if (!state.isOnline) {
+    return getLocalStorageValue('dishes') || []
+  }
+
   const response = await client.getEntries({
     content_type: 'dish',
     order: 'fields.name',
   })
 
   const dishes = parseDishesResponse(response)
+  const sortedDishes = sortBy(dishes, dish => dish.restaurant.name)
 
-  return sortBy(dishes, dish => dish.restaurant.name)
+  // Save data in local storage for later offline use
+  setLocalStorageValue('dishes', sortedDishes)
+
+  return sortedDishes
 }
 
 const parseDishesResponse = (response) =>
@@ -38,3 +57,4 @@ const loadEntryById = async (id) => {
 
 export const loadAboutPage = () =>
   loadEntryById(ABOUT_ENTRY_ID)
+
