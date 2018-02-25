@@ -3,18 +3,30 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 import {White} from '../../common/styles/colors'
+import {DesktopOnly, MobileOnly, TABLET_MAX_WIDTH} from '../../common/styles/responsive'
 import {Row, Content} from '../../common/components/Grid'
 import Logo from './Logo'
+import FacebookShare from './FacebookShare'
 
 const AppBar = () =>
   <Container>
     <Row>
       <Content>
-        <Link to="/">
-          <H1>
-            <Logo />
-          </H1>
-        </Link>
+        <Inner>
+          <Link to="/">
+            <H1>
+              <Logo />
+            </H1>
+          </Link>
+          <Items>
+            <DesktopOnly>
+              <FacebookShare size="large" />
+            </DesktopOnly>
+            <MobileOnly>
+              <FacebookShare size="small" />
+            </MobileOnly>
+          </Items>
+        </Inner>
       </Content>
     </Row>
   </Container>
@@ -29,8 +41,22 @@ const Container = styled.div`
   justify-content: center;
 `
 
+const Inner = styled.div`
+  align-items: center; justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: ${TABLET_MAX_WIDTH}) {
+    flex-grow: 1;
+  }
+`
+
 const H1 = styled.h1`
   margin: 0;
+`
+
+const Items = styled.div`
+  display: flex;
 `
 
 export default AppBar
