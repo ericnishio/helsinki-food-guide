@@ -37,7 +37,8 @@ const Container = styled.div`
 `
 
 const Outer = styled.div`
-  display: inline-block;
+  align-items: center; justify-content: center;
+  display: flex;
   position: relative;
   width: 64px; height: 64px;
 `

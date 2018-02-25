@@ -23,6 +23,7 @@ const NotFound = () =>
 const Body = styled.div`
   align-items: center; justify-content: center;
   display: flex;
+  flex-grow: 1;
   height: ${window.innerHeight - APP_BAR_HEIGHT}px;
 `
 
