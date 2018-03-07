@@ -5,11 +5,13 @@ import styled from 'styled-components'
 import TWITTER from '../../assets/images/twitter.png'
 
 const Avatar = ({image, twitter, style}) =>
-  <a href={`https://twitter.com/${twitter}`} target="_blank" rel="noopener noreferrer">
-    <Background style={{
-      backgroundImage: `url(${image})`,
-      ...style,
-    }} />
+  <a
+    href={`https://twitter.com/${twitter}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    style={style}
+  >
+    <Background style={{backgroundImage: `url(${image})`}} />
   </a>
 
 Avatar.propTypes = {
