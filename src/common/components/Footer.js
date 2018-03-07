@@ -4,24 +4,32 @@ import styled from 'styled-components'
 import {Row, Content} from '../../common/components/Grid'
 import {TABLET_MAX_WIDTH} from '../styles/responsive'
 import {SMALL_FONT_SIZE} from '../styles/fonts'
+import Gravatar from './Gravatar'
 
 const Footer = () =>
   <Container>
     <Row>
       <Content>
         <Body>
-          <Copyright>
-            &copy; {new Date().getFullYear()} Eric Nishio
-          </Copyright>
-          <Email>
-            &#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#104;&#101;&#108;&#115;&#105;&#110;&#107;&#105;&#102;&#111;&#111;&#100;&#103;&#117;&#105;&#100;&#101;&#046;&#099;&#111;&#109;
-          </Email>
-          <a href="https://www.contentful.com/" rel="nofollow noopener noreferrer" target="_blank">
-            <img
-              src="https://images.contentful.com/fo9twyrwpveg/7Htleo27dKYua8gio8UEUy/0797152a2d2f8e41db49ecbf1ccffdaa/PoweredByContentful_DarkBackground_MonochromeLogo.svg"
-              style={{marginTop: '20px', maxWidth: '100px', width: '100%'}}
-              alt="Powered by Contentful" />
-          </a>
+          <Folder>
+            <Gravatar md5="d280f78ddf1d397b7d69d0ff794f23d2" />
+            <Right>
+              <Copyright>
+                &copy; {new Date().getFullYear()} Eric Nishio
+              </Copyright>
+              <Email>
+                &#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#104;&#101;&#108;&#115;&#105;&#110;&#107;&#105;&#102;&#111;&#111;&#100;&#103;&#117;&#105;&#100;&#101;&#046;&#099;&#111;&#109;
+              </Email>
+              <Badge>
+                <a href="https://www.contentful.com/" rel="nofollow noopener noreferrer" target="_blank">
+                  <img
+                    src="https://images.contentful.com/fo9twyrwpveg/7Htleo27dKYua8gio8UEUy/0797152a2d2f8e41db49ecbf1ccffdaa/PoweredByContentful_DarkBackground_MonochromeLogo.svg"
+                    style={{maxWidth: '100px', width: '100%'}}
+                    alt="Powered by Contentful" />
+                </a>
+              </Badge>
+            </Right>
+          </Folder>
         </Body>
       </Content>
     </Row>
@@ -50,14 +58,32 @@ const Body = styled.div`
   flex-direction: column;
 `
 
-const Copyright = styled.div`
+const Folder = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
+const Right = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 8px;
+  margin-left: 18px;
+`
+
+const Copyright = styled.span`
+  color: #e8e8e8;
   font-size: ${SMALL_FONT_SIZE};
   text-transform: uppercase;
 `
 
-const Email = styled.div`
+const Email = styled.span`
   font-size: ${SMALL_FONT_SIZE};
-  margin-top: 7px;
+  margin-top: 3px;
+`
+
+const Badge = styled.span`
+  margin-top: 25px;
 `
 
 export default Footer
