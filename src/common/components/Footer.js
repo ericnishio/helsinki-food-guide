@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import {Row, Content} from '../../common/components/Grid'
 import {TABLET_MAX_WIDTH} from '../styles/responsive'
 import {SMALL_FONT_SIZE} from '../styles/fonts'
-import Gravatar from './Gravatar'
+import Avatar from './Avatar'
 
 const Footer = () =>
   <Container>
@@ -12,7 +12,10 @@ const Footer = () =>
       <Content>
         <Body>
           <Folder>
-            <Gravatar md5="d280f78ddf1d397b7d69d0ff794f23d2" />
+            <Avatar
+              image="//www.gravatar.com/avatar/d280f78ddf1d397b7d69d0ff794f23d2"
+              twitter="ericnishio"
+            />
             <Right>
               <Copyright>
                 &copy; {new Date().getFullYear()} Eric Nishio
