@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import TWITTER from '../../assets/images/twitter.png'
+import TWITTER_LOGO from '../../assets/images/twitter.png'
 
 const Avatar = ({image, twitter, style}) =>
   <a
@@ -31,7 +31,7 @@ const Background = styled.div`
   transition: border-color 0.6s, background-image 0.6s;
 
   &:hover {
-    background-image: url(${TWITTER}) !important;
+    background-image: url(${TWITTER_LOGO}) !important;
     border-color: transparent;
   }
 `

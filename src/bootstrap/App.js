@@ -20,5 +20,4 @@ const Routes = () =>
     </Fragment>
   </Router>
 
-
 export default Routes
