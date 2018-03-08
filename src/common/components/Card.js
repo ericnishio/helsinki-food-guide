@@ -39,8 +39,8 @@ const Container = styled.div`
 
 export const Stripe = styled.div`
   background-color: ${props => props.color || Pink.MEDIUM};
-  max-width: 10px;
-  min-width: 10px;
+  max-width: 8px;
+  min-width: 8px;
 
   @media (max-width: ${TABLET_MAX_WIDTH}) {
     max-width: 6px;
