@@ -28,7 +28,7 @@ const Background = styled.div`
   border-radius: 50%;
   box-shadow: 0 0 0 #000;
   width: 50px; height: 50px;
-  transition: border-color 0.6s, background-image 0.6s;
+  transition: border-color 0.3s ease-in, background-image 0.3s ease-in;
 
   &:hover {
     background-image: url(${TWITTER_LOGO}) !important;
