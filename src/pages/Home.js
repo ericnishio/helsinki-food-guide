@@ -47,7 +47,7 @@ class Home extends Component {
             {
               dishes.map(dish =>
                 <Dish
-                  key={dish.name}
+                  key={dish.id}
                   dish={dish}
                   restaurant={dish.restaurant}
                 />

@@ -39,6 +39,7 @@ export const loadDishes = async () => {
 
 const parseDishesResponse = (response) =>
   response.items.map(item => ({
+    id: item.sys.id,
     name: item.fields.name,
     description: item.fields.description,
     price: item.fields.price,
