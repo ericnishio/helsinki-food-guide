@@ -31,9 +31,7 @@ class Home extends Component {
     const {dishes} = this.state
 
     if (!dishes) {
-      return (
-        <Spinner centerOfViewport={true} />
-      )
+      return <Spinner centerOfViewport={true} />
     }
 
     return (

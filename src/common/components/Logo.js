@@ -5,14 +5,7 @@ import styled from 'styled-components'
 import LOGO from '../../assets/images/logo.png'
 
 const Logo = ({style, alt = 'Helsinki Food Guide'}) =>
-  <Image
-    src={LOGO}
-    alt={alt}
-    style={{
-      width: '170px', height: 'auto',
-      ...style,
-    }}
-  />
+  <Image src={LOGO} alt={alt} style={style} />
 
 Logo.propTypes = {
   alt: PropTypes.string,
@@ -21,6 +14,7 @@ Logo.propTypes = {
 
 const Image = styled.img`
   display: block;
+  width: 170px; height: auto;
 `
 
 export default Logo

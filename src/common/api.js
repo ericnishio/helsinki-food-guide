@@ -3,11 +3,19 @@ import sortBy from 'lodash/sortBy'
 
 import {setLocalStorageValue, getLocalStorageValue} from './localStorage'
 
-export const ABOUT_ENTRY_ID = '2Uqcv9yuQEIWoQu8SW4kAG'
+const Contentful = {
+  Api: {
+    SPACE: '9jmm61ik3148',
+    ACCESS_TOKEN: 'c2a2be0d37960b9f71ba0e0d31ac38bb908dc4a226bb311802d0361e4bcb700f',
+  },
+  Pages: {
+    ABOUT: '2Uqcv9yuQEIWoQu8SW4kAG',
+  },
+}
 
 const client = createClient({
-  space: '9jmm61ik3148',
-  accessToken: 'c2a2be0d37960b9f71ba0e0d31ac38bb908dc4a226bb311802d0361e4bcb700f',
+  space: Contentful.Api.SPACE,
+  accessToken: Contentful.Api.ACCESS_TOKEN,
 })
 
 export const loadDishes = async () => {
@@ -47,4 +55,4 @@ const loadEntryById = async (id) => {
 }
 
 export const loadAboutPage = () =>
-  loadEntryById(ABOUT_ENTRY_ID)
+  loadEntryById(Contentful.Pages.ABOUT)

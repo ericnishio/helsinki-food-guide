@@ -1,6 +1,5 @@
-export const formatPrice = (value, currency) => {
-  return `${value.toFixed(2)} ${currencyToSymbol(currency)}`
-}
+export const formatPrice = (value, currency) =>
+  `${value.toFixed(2)} ${currencyToSymbol(currency)}`
 
 export const addressToGoogleMapsUrl = (address) => {
   const normalizedAddress = address.split(' ').join('+')
