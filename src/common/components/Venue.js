@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import {addressToGoogleMapsUrl} from '../helpers'
 import Icon from './Icon'
-import {TABLET_MAX_WIDTH} from '../styles/responsive'
+import {MOBILE_MAX_WIDTH} from '../styles/responsive'
 import {SMALL_FONT_SIZE} from '../styles/fonts'
 
 const Venue = ({name, address, website, style}) =>
@@ -52,7 +52,7 @@ const Link = styled.a`
     margin-right: 0;
   }
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     padding-left: 0; padding-right: 0;
     margin-right: 20px;
   }
@@ -63,7 +63,7 @@ const Container = styled.div`
   font-weight: 400;
   justify-content: space-between;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     flex-direction: column;
   }
 `
@@ -72,7 +72,7 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     margin-bottom: 10px;
   }
 `
@@ -81,7 +81,7 @@ const Actions = styled.div`
   display: flex;
   align-items: center;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     font-size: ${SMALL_FONT_SIZE};
   }
 `
@@ -96,7 +96,7 @@ const Name = styled.div`
   line-height: 22px;
   text-transform: uppercase;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     margin-bottom: 0;
   }
 `

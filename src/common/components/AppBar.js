@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 import {White} from '../../common/styles/colors'
-import {TABLET_MAX_WIDTH} from '../../common/styles/responsive'
+import {MOBILE_MAX_WIDTH} from '../../common/styles/responsive'
 import {Row, Content} from '../../common/components/Grid'
 import Logo from './Logo'
 import FacebookShare from './FacebookShare'
@@ -41,7 +41,7 @@ const Inner = styled.div`
   display: flex;
   flex-direction: row;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     flex-grow: 1;
   }
 `

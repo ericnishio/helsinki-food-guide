@@ -6,7 +6,7 @@ import {Row, Content} from '../common/components/Grid'
 import {APP_BAR_HEIGHT} from '../common/components/AppBar'
 import {HEADING_FONT} from '../common/styles/fonts'
 import BROKEN_EGG from '../assets/images/broken-egg.png'
-import {TABLET_MAX_WIDTH} from '../common/styles/responsive'
+import {MOBILE_MAX_WIDTH} from '../common/styles/responsive'
 
 const NotFound = () =>
   <Row>
@@ -35,7 +35,7 @@ const Heading = styled.h2`
   font-weight: 400;
   margin: 0;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     display: none;
   }
 `

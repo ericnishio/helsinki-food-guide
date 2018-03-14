@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import {White, Pink} from '../styles/colors'
-import {TABLET_MAX_WIDTH} from '../styles/responsive'
+import {MOBILE_MAX_WIDTH} from '../styles/responsive'
 
 const Card = ({stripeColor, children, style}) =>
   <Container style={style}>
@@ -25,7 +25,7 @@ export const Heading = styled.h3`
   line-height: 42px;
   margin: 0;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     font-size: 24px;
     line-height: 34px;
   }
@@ -42,7 +42,7 @@ export const Stripe = styled.div`
   max-width: 8px;
   min-width: 8px;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     max-width: 6px;
     min-width: 6px;
   }
@@ -54,7 +54,7 @@ const Body = styled.div`
   flex-grow: 1;
   padding: 40px;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     padding: 20px;
   }
 `

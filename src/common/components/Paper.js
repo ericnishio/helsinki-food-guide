@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import {White} from '../styles/colors'
 import {LARGE_FONT_SIZE} from '../styles/fonts'
-import {TABLET_MAX_WIDTH} from '../styles/responsive'
+import {MOBILE_MAX_WIDTH} from '../styles/responsive'
 import {Stripe} from './Card'
 
 const Paper = ({children, style}) =>
@@ -29,7 +29,7 @@ const Container = styled.div`
   line-height: 34px;
   width: 80%;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     width: 100%;
   }
 `
@@ -40,7 +40,7 @@ const Inner = styled.div`
   padding: 60px;
   padding-left: 90px; padding-right: 90px;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     padding: 20px;
   }
 `

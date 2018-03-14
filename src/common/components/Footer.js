@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import {Row, Content} from '../../common/components/Grid'
-import {TABLET_MAX_WIDTH} from '../styles/responsive'
+import {MOBILE_MAX_WIDTH} from '../styles/responsive'
 import {SMALL_FONT_SIZE} from '../styles/fonts'
 import Avatar from './Avatar'
 
@@ -48,7 +48,7 @@ const Container = styled.div`
   margin-top: 140px;
   padding-top: ${PADDING}; padding-bottom: ${PADDING};
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     margin-top: 80px;
     padding-top: ${PADDING_MOBILE}; padding-bottom: ${PADDING_MOBILE};
   }

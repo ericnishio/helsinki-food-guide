@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import {formatPrice} from '../helpers'
-import {TABLET_MAX_WIDTH} from '../styles/responsive'
+import {MOBILE_MAX_WIDTH} from '../styles/responsive'
 import {MEDIUM_FONT_SIZE, LARGE_FONT_SIZE} from '../styles/fonts'
 import Card, {Heading as Name} from './Card'
 import Venue from './Venue'
@@ -69,7 +69,7 @@ const PhotoBackground = styled.div`
   width: ${PHOTO_WIDTH};
   height: ${PHOTO_HEIGHT};
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     width: 100%;
   }
 `
@@ -81,7 +81,7 @@ const PhotoPlaceholder = styled.div`
   width: ${PHOTO_WIDTH};
   height: ${PHOTO_HEIGHT};
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     width: 100%;
   }
 `
@@ -90,7 +90,7 @@ const Container = styled.div`
   display: flex;
   margin-bottom: 30px;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     flex-direction: column-reverse;
   }
 `
@@ -100,7 +100,7 @@ const Header = styled.div`
   display: flex;
   flex-direction: row;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     align-items: baseline;
     flex-direction: column;
   }
@@ -113,7 +113,7 @@ const Price = styled.div`
   margin-left: 10px;
   white-space: nowrap;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     font-size: 18px;
     margin: 0;
     margin-top: 5px;
@@ -131,7 +131,7 @@ const Description = styled.p`
     margin-bottom: 0;
   }
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     font-size: ${MEDIUM_FONT_SIZE};
     line-height: 24px;
   }
@@ -140,7 +140,7 @@ const Description = styled.p`
 const VenueContainer = styled.div`
   margin-top: 20px;
 
-  @media (max-width: ${TABLET_MAX_WIDTH}) {
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
     margin-top: 0;
   }
 `
