@@ -11,7 +11,7 @@ import Icon from './Icon'
 
 const Dish = ({dish, restaurant}) =>
   <Container>
-    <Card style={{zIndex: 10}}>
+    <Card style={{zIndex: 10, flex: 1}}>
       <Header>
         <Name>{dish.name}</Name>
         <Price>from {formatPrice(dish.price, 'EUR')}</Price>
