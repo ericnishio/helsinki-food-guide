@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import {formatPrice} from '../helpers'
 import {MOBILE_MAX_WIDTH} from '../styles/responsive'
-import {MEDIUM_FONT_SIZE, LARGE_FONT_SIZE} from '../styles/fonts'
+import {MEDIUM_FONT_SIZE} from '../styles/fonts'
 import Card, {Heading as Name} from './Card'
 import Venue from './Venue'
 import Icon from './Icon'
@@ -121,10 +121,9 @@ const Price = styled.div`
 `
 
 const Description = styled.p`
-  font-style: italic;
-  font-size: ${LARGE_FONT_SIZE};
+  font-size: ${MEDIUM_FONT_SIZE};
   font-weight: 300;
-  line-height: 26px;
+  line-height: 24px;
   margin-top: 1em; margin-bottom: 1em;
 
   &:last-child {
@@ -138,11 +137,7 @@ const Description = styled.p`
 `
 
 const VenueContainer = styled.div`
-  margin-top: 20px;
-
-  @media (max-width: ${MOBILE_MAX_WIDTH}) {
-    margin-top: 0;
-  }
+  margin-top: 5px;
 `
 
 export default Dish
