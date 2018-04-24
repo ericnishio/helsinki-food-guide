@@ -52,6 +52,7 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  overflow: hidden; /* Wrap content on IE */
   padding: 40px;
 
   @media (max-width: ${MOBILE_MAX_WIDTH}) {
