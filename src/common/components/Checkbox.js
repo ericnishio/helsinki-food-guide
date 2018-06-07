@@ -29,7 +29,14 @@ const Container = styled.div`
   align-items: center;
   display: flex;
   cursor: pointer;
+  transition: opacity 0.1s ease-in;
+
+  &:active {
+    opacity: 0.7;
+  }
 `
+
+const SIZE = '26px'
 
 const Box = styled.div`
   align-items: center;
@@ -37,10 +44,10 @@ const Box = styled.div`
   border: 2px solid transparent;
   border-color: ${Pink.MEDIUM};
   display: flex;
-  width: 20px;
-  height: 20px;
+  width: ${SIZE};
+  height: ${SIZE};
 
-  ${props => props.disabled && 'border-color: #ddd;'}
+  ${props => props.disabled && `border-color: ${Pink.LIGHT};`}
 `
 
 const Check = styled.div`
@@ -48,11 +55,14 @@ const Check = styled.div`
   width: 10px;
   height: 10px;
 
-  ${props => props.disabled && 'background-color: #ddd;'}
+  ${props => props.disabled && `background-color: ${Pink.LIGHT};`}
 `
 
 const Label = styled.div`
-  margin-left: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: ${SIZE};
+  margin-left: 8px;
 `
 
 export default Checkbox

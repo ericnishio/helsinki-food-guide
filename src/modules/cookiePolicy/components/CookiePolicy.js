@@ -31,6 +31,7 @@ class CookiePolicy extends Component {
   }
 
   state = {
+    showDetails: false,
     activePolicy: this.props.policies[0].value,
     saved: {
       ...getDefaultPolicyValues(this.props.policies),
@@ -50,7 +51,7 @@ class CookiePolicy extends Component {
 
   render() {
     const {policies, style} = this.props
-    const {saved} = this.state
+    const {saved, showDetails} = this.state
 
     const activePolicy = policies.find(_ => _.value === this.state.activePolicy)
 
@@ -59,74 +60,86 @@ class CookiePolicy extends Component {
     }
 
     return (
-      <Container style={style}>
-        <Top>
-          <Menu>
-            {policies.map(policy =>
-              <MenuItem
-                key={policy.value}
-                isActive={activePolicy.value === policy.value}
-                onClick={() => this.setState({activePolicy: policy.value})}
-              >
-                {policy.label}
-              </MenuItem>
-            )}
-          </Menu>
-          <Body>
-            <Heading>{activePolicy.label}</Heading>
-            <Description>{activePolicy.description}</Description>
-            <Checkbox
-              label={`Accept these cookies ${activePolicy.isRequired ? '(required)' : ''}`}
-              value={activePolicy.isRequired ? true : Boolean(saved[activePolicy.value])}
-              onClick={value => {
-                this.setState({
-                  saved: {
-                    ...this.state.saved,
-                    [activePolicy.value]: value,
-                  },
-                })
+      <Outer>
+        <Container style={style}>
+          <Top>
+            <Menu>
+              {
+                policies.map(policy =>
+                  <MenuItem
+                    key={policy.value}
+                    isActive={activePolicy.value === policy.value}
+                    onClick={() => this.setState({activePolicy: policy.value})}
+                  >
+                    {policy.label}
+                  </MenuItem>
+                )
+              }
+            </Menu>
+            <Body>
+              <Heading>{activePolicy.label}</Heading>
+              <Description>{activePolicy.description}</Description>
+              {
+                showDetails &&
+                <Table>
+                  <Thead>
+                    <tr>
+                      <Th>Cookie(s)</Th>
+                      <Th>Purpose</Th>
+                      <Th>Expiry</Th>
+                      <Th>Type</Th>
+                    </tr>
+                  </Thead>
+                  <tbody>
+                    {
+                      activePolicy.cookies.map((cookie, index) => (
+                        <tr key={index}>
+                          <td>{cookie.name}</td>
+                          <td>{cookie.purpose}</td>
+                          <td style={{whiteSpace: 'nowrap'}}>{cookie.expiry}</td>
+                          <td>{cookie.type}</td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </Table>
+              }
+              <SmallButton onClick={() => this.setState({showDetails: !showDetails})}>
+                {showDetails ? 'Hide details...' : 'Show details...'}
+              </SmallButton>
+              <Checkbox
+                label={`Accept these cookies ${activePolicy.isRequired ? '(required)' : ''}`}
+                value={activePolicy.isRequired ? true : Boolean(saved[activePolicy.value])}
+                onClick={value => {
+                  this.setState({
+                    saved: {
+                      ...this.state.saved,
+                      [activePolicy.value]: value,
+                    },
+                  })
+                }}
+                disabled={activePolicy.isRequired}
+                style={{
+                  marginTop: '15px',
+                }}
+              />
+            </Body>
+          </Top>
+          <Bottom>
+            <Button
+              type="button"
+              onClick={() => {
+                saveCookiePolicies(this.state.saved)
+                runWithCookiePolicies()
+                this.forceUpdate()
               }}
-              disabled={activePolicy.isRequired}
-              style={{
-                marginBottom: '20px',
-              }}
-            />
-            <Table>
-              <Thead>
-                <tr>
-                  <td>Cookie(s)</td>
-                  <td>Purpose</td>
-                  <td>Expiry</td>
-                  <td>Type</td>
-                </tr>
-              </Thead>
-              <tbody>
-                {activePolicy.cookies.map((cookie, index) => (
-                  <tr key={index}>
-                    <td>{cookie.name}</td>
-                    <td>{cookie.purpose}</td>
-                    <td>{cookie.expiry}</td>
-                    <td>{cookie.type}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
-          </Body>
-        </Top>
-        <Bottom>
-          <Button
-            type="button"
-            onClick={() => {
-              saveCookiePolicies(this.state.saved)
-              runWithCookiePolicies()
-              this.forceUpdate()
-            }}
-            style={{flex: 1}}
-          >
-            OK
-          </Button>
-        </Bottom>
-      </Container>
+              style={{flex: 1}}
+            >
+              Save
+            </Button>
+          </Bottom>
+        </Container>
+      </Outer>
     )
   }
 }
@@ -137,15 +150,21 @@ const getSavedCookiePolicies = () =>
 const saveCookiePolicies = (policies) =>
   setLocalStorageValue('cookiePolicies', policies)
 
+const Outer = styled.div`
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+`
+
 const Container = styled.div`
   background-color: #fff;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
   width: 600px;
-  position: fixed;
-  bottom: 0;
-  left: 0; right: 0;
-  z-index: 10;
 `
 
 const Top = styled.div`
@@ -157,20 +176,29 @@ const Menu = styled.div`
 `
 
 const MenuItem = styled.div`
+  align-items: center; justify-content: center;
   cursor: pointer;
-  padding: 10px 40px;
+  display: flex;
+  font-size: 11px;
+  font-weight: 600;
+  padding-left: 40px; padding-right: 40px;
+  height: 40px;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease-in;
 
-  ${props => props.isActive && 'background-color: #ddd;'};
+  &:active {
+    opacity: 0.7;
+  }
+
+  ${props => props.isActive && 'background-color: #f2f2f2;'};
 `
 
 const Body = styled.div`
-  height: 185px;
-  overflow-y: scroll;
   padding: 20px 30px;
 `
 
 const Heading = styled.h2`
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   margin: 0;
   margin-bottom: 10px;
@@ -178,10 +206,11 @@ const Heading = styled.h2`
 
 const Description = styled.div`
   font-size: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 `
 
 const Table = styled.table`
+  border-spacing: 5px;
   font-size: 12px;
 `
 
@@ -189,9 +218,20 @@ const Thead = styled.thead`
   font-weight: 600;
 `
 
+const Th = styled.th`
+  text-align: initial;
+`
+
 const Bottom = styled.div`
   display: flex;
-  margin-top: 20px;
+  margin-top: 5px;
+`
+
+const SmallButton = styled.div`
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  padding-top: 5px; padding-bottom: 5px;
 `
 
 export default CookiePolicy

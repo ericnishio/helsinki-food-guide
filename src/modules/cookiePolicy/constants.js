@@ -26,7 +26,7 @@ export const COOKIE_POLICIES = [
     cookies: [
       {
         name: '*.gstatic.com',
-        purpose: 'Registers an anonymous ID for generating statistical data on how the visitor uses the website.',
+        purpose: 'Registers an anonymous session in Google Analytics for generating statistical data on how the visitor uses the website.',
         expiry: '2 years',
         type: 'HTTP',
       },
