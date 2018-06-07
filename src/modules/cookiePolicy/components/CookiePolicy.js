@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {createPortal} from 'react-dom'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
@@ -6,6 +7,8 @@ import Button from '../../../common/components/Button'
 import Checkbox from '../../../common/components/Checkbox'
 import {getLocalStorageValue, setLocalStorageValue} from '../../../common/localStorage'
 import {MOBILE_MAX_WIDTH} from '../../../common/styles/responsive'
+import {SMALL_FONT_SIZE, LARGE_FONT_SIZE} from '../../../common/styles/fonts'
+import {White} from '../../../common/styles/colors'
 import {getDefaultPolicyValues, runWithCookiePolicies} from '../helpers'
 
 const CookieType = PropTypes.shape({
@@ -24,14 +27,13 @@ const PolicyType = PropTypes.shape({
 })
 
 class CookiePolicy extends Component {
-  // TODO: Ability to edit choices.
-
   static propTypes = {
     policies: PropTypes.arrayOf(PolicyType).isRequired,
     style: PropTypes.any,
   }
 
   state = {
+    isOpen: false,
     showDetails: false,
     activePolicy: this.props.policies[0].value,
     saved: {
@@ -42,6 +44,10 @@ class CookiePolicy extends Component {
 
   componentDidMount() {
     runWithCookiePolicies()
+
+    if (this.hasUnreviewedPolicies()) {
+      this.setState({isOpen: true})
+    }
   }
 
   hasUnreviewedPolicies = () => {
@@ -56,11 +62,15 @@ class CookiePolicy extends Component {
 
     const activePolicy = policies.find(_ => _.value === this.state.activePolicy)
 
-    if (!this.hasUnreviewedPolicies()) {
-      return null
+    if (!this.state.isOpen) {
+      return (
+        <CookieSettings onClick={() => this.setState({isOpen: true})}>
+          Update your cookie settings
+        </CookieSettings>
+      )
     }
 
-    return (
+    return createPortal(
       <Outer>
         <Container style={style}>
           <Top>
@@ -131,8 +141,10 @@ class CookiePolicy extends Component {
               type="button"
               onClick={() => {
                 saveCookiePolicies(this.state.saved)
+
                 runWithCookiePolicies()
-                this.forceUpdate()
+
+                this.setState({isOpen: false})
               }}
               style={{flex: 1}}
             >
@@ -140,7 +152,8 @@ class CookiePolicy extends Component {
             </Button>
           </Bottom>
         </Container>
-      </Outer>
+      </Outer>,
+      document.getElementById('modal')
     )
   }
 }
@@ -202,20 +215,20 @@ const Body = styled.div`
 `
 
 const Heading = styled.h2`
-  font-size: 22px;
+  font-size: ${LARGE_FONT_SIZE};
   font-weight: 600;
   margin: 0;
   margin-bottom: 10px;
 `
 
 const Description = styled.div`
-  font-size: 12px;
+  font-size: ${SMALL_FONT_SIZE};
   margin-bottom: 10px;
 `
 
 const Table = styled.table`
   border-spacing: 5px;
-  font-size: 12px;
+  font-size: ${SMALL_FONT_SIZE};
 
   @media (max-width: ${MOBILE_MAX_WIDTH}) {
     display: flex;
@@ -250,9 +263,24 @@ const Bottom = styled.div`
 
 const SmallButton = styled.div`
   cursor: pointer;
-  font-size: 12px;
+  font-size: ${SMALL_FONT_SIZE};
   font-weight: 600;
   padding-top: 5px; padding-bottom: 5px;
+`
+
+const CookieSettings = styled.div`
+  cursor: pointer;
+  font-size: ${SMALL_FONT_SIZE};
+  margin-top: 15px;
+  transition: opacity, all 0.2s ease-in;
+
+  &:hover {
+    color: ${White.LIGHT};
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
 `
 
 export default CookiePolicy

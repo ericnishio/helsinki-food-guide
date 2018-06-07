@@ -13,7 +13,7 @@ export const getDefaultPolicyValues = policies => {
 export const runWithCookiePolicies = () => {
   const cookiePolicies = getLocalStorageValue('cookiePolicies') || {}
 
-  if (cookiePolicies.statistics) {
+  if (cookiePolicies.analytics) {
     googleAnalytics()
   }
 }

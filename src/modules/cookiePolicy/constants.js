@@ -1,7 +1,7 @@
 export const COOKIE_POLICIES = [
   {
     label: 'Necessary',
-    description: 'Necessary cookies make a website usable by enabling basic functions like remotely stored content. The website requires these cookies to function properly.',
+    description: 'Necessary cookies make this website usable by enabling basic functions like remotely stored content. The website requires these cookies to function properly.',
     value: 'necessary',
     isRequired: true,
     cookies: [
@@ -13,16 +13,16 @@ export const COOKIE_POLICIES = [
       },
       {
         name: '*.contentful.com',
-        purpose: 'Registers anonymous API IDs that are used to fetch content.',
+        purpose: 'Registers anonymous API identifiers used for fetching content.',
         expiry: '2–20 years',
         type: 'HTTP',
       },
     ],
   },
   {
-    label: 'Statistics',
+    label: 'Analytics',
     description: 'Helps us to improve usability by understanding how visitors interact with the website by collecting anonymous information.',
-    value: 'statistics',
+    value: 'analytics',
     cookies: [
       {
         name: '*.gstatic.com',
