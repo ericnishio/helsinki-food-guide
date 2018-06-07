@@ -24,7 +24,7 @@ const PolicyType = PropTypes.shape({
 })
 
 class CookiePolicy extends Component {
-  // TODO: Show popup when there are new, unaccepted policies.
+  // TODO: Ability to edit choices.
 
   static propTypes = {
     policies: PropTypes.arrayOf(PolicyType).isRequired,
@@ -33,11 +33,20 @@ class CookiePolicy extends Component {
 
   state = {
     activePolicy: this.props.policies[0].value,
-    saved: getLocalStorageValue('cookiePolicies') || getDefaultPolicyValues(this.props.policies),
+    saved: {
+      ...getDefaultPolicyValues(this.props.policies),
+      ...getSavedCookiePolicies(),
+    },
   }
 
   componentDidMount() {
     runWithCookiePolicies()
+  }
+
+  hasUnreviewedPolicies = () => {
+    const savedCookiePolicies = getSavedCookiePolicies() || {}
+
+    return Object.values(savedCookiePolicies).length !== this.props.policies.length
   }
 
   render() {
@@ -45,6 +54,10 @@ class CookiePolicy extends Component {
     const {saved} = this.state
 
     const activePolicy = policies.find(_ => _.value === this.state.activePolicy)
+
+    if (!this.hasUnreviewedPolicies()) {
+      return null
+    }
 
     return (
       <Container style={style}>
@@ -67,14 +80,12 @@ class CookiePolicy extends Component {
               label={`Accept these cookies ${activePolicy.isRequired ? '(required)' : ''}`}
               value={activePolicy.isRequired ? true : Boolean(saved[activePolicy.value])}
               onClick={value => {
-                const saved = {
-                  ...this.state.saved,
-                  [activePolicy.value]: value,
-                }
-
-                this.setState({saved})
-
-                saveCookiePolicies(saved)
+                this.setState({
+                  saved: {
+                    ...this.state.saved,
+                    [activePolicy.value]: value,
+                  },
+                })
               }}
               disabled={activePolicy.isRequired}
               style={{
@@ -111,6 +122,7 @@ class CookiePolicy extends Component {
             onClick={() => {
               saveCookiePolicies(this.state.saved)
               runWithCookiePolicies()
+              this.forceUpdate()
             }}
             style={{flex: 1}}
           >
@@ -121,6 +133,9 @@ class CookiePolicy extends Component {
     )
   }
 }
+
+const getSavedCookiePolicies = () =>
+  getLocalStorageValue('cookiePolicies')
 
 const saveCookiePolicies = (policies) =>
   setLocalStorageValue('cookiePolicies', policies)
