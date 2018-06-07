@@ -170,20 +170,13 @@ const Container = styled.div`
 
 const Top = styled.div`
   display: flex;
-  flex-direction: row;
-
-  @media (max-width: ${MOBILE_MAX_WIDTH}) {
-    flex-direction: column;
-  }
+  flex-direction: column;
 `
 
 const Menu = styled.div`
+  background-color: #f2f2f2;
   display: flex;
-  flex-direction: column;
-
-  @media (max-width: ${MOBILE_MAX_WIDTH}) {
-    flex-direction: row;
-  }
+  flex-direction: row;
 `
 
 const MenuItem = styled.div`
@@ -201,7 +194,7 @@ const MenuItem = styled.div`
     opacity: 0.7;
   }
 
-  ${props => props.isActive && 'background-color: #f2f2f2;'};
+  ${props => props.isActive && 'background-color: #fff;'};
 `
 
 const Body = styled.div`
