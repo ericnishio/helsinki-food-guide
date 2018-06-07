@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Button from '../../../common/components/Button'
 import Checkbox from '../../../common/components/Checkbox'
 import {getLocalStorageValue, setLocalStorageValue} from '../../../common/localStorage'
+import {MOBILE_MAX_WIDTH} from '../../../common/styles/responsive'
 import {getDefaultPolicyValues, runWithCookiePolicies} from '../helpers'
 
 const CookieType = PropTypes.shape({
@@ -77,7 +78,7 @@ class CookiePolicy extends Component {
               }
             </Menu>
             <Body>
-              <Heading>{activePolicy.label}</Heading>
+              <Heading>{activePolicy.label} cookies</Heading>
               <Description>{activePolicy.description}</Description>
               {
                 showDetails &&
@@ -93,12 +94,12 @@ class CookiePolicy extends Component {
                   <tbody>
                     {
                       activePolicy.cookies.map((cookie, index) => (
-                        <tr key={index}>
+                        <Tr key={index}>
                           <td>{cookie.name}</td>
                           <td>{cookie.purpose}</td>
                           <td style={{whiteSpace: 'nowrap'}}>{cookie.expiry}</td>
                           <td>{cookie.type}</td>
-                        </tr>
+                        </Tr>
                       ))
                     }
                   </tbody>
@@ -135,7 +136,7 @@ class CookiePolicy extends Component {
               }}
               style={{flex: 1}}
             >
-              Save
+              OK
             </Button>
           </Bottom>
         </Container>
@@ -170,9 +171,19 @@ const Container = styled.div`
 const Top = styled.div`
   display: flex;
   flex-direction: row;
+
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
+    flex-direction: column;
+  }
 `
 
 const Menu = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
+    flex-direction: row;
+  }
 `
 
 const MenuItem = styled.div`
@@ -212,10 +223,27 @@ const Description = styled.div`
 const Table = styled.table`
   border-spacing: 5px;
   font-size: 12px;
+
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const Thead = styled.thead`
   font-weight: 600;
+
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
+    display: none;
+  }
+`
+
+const Tr = styled.tr`
+  @media (max-width: ${MOBILE_MAX_WIDTH}) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+  }
 `
 
 const Th = styled.th`
