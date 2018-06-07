@@ -6,6 +6,8 @@ import Footer from '../common/components/Footer'
 import Home from '../pages/Home'
 import About from '../pages/About'
 import NotFound from '../pages/NotFound'
+import CookiePolicy from '../modules/cookiePolicy/components/CookiePolicy'
+import {COOKIE_POLICIES} from '../modules/cookiePolicy/constants'
 
 const Routes = () =>
   <Router>
@@ -17,6 +19,7 @@ const Routes = () =>
         <Route component={NotFound} />
       </Switch>
       <Footer />
+      <CookiePolicy policies={COOKIE_POLICIES} />
     </Fragment>
   </Router>
 
