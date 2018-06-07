@@ -6,8 +6,13 @@ export const COOKIE_POLICIES = [
     isRequired: true,
     cookies: [
       {
-        name: '*',
-        provider: 'contentful.com',
+        name: '*.helsinkifoodguide.com',
+        purpose: 'Caches content for offline use and improved performance.',
+        expiry: 'Persistent',
+        type: 'Local',
+      },
+      {
+        name: '*.contentful.com',
         purpose: 'Registers anonymous API IDs that are used to fetch content.',
         expiry: '2–20 years',
         type: 'HTTP',
@@ -16,12 +21,11 @@ export const COOKIE_POLICIES = [
   },
   {
     label: 'Statistics',
-    description: '',
+    description: 'Helps us to improve usability by understanding how visitors interact with the website by collecting anonymous information.',
     value: 'statistics',
     cookies: [
       {
-        name: '*',
-        provider: 'gstatic.com',
+        name: '*.gstatic.com',
         purpose: 'Registers an anonymous ID for generating statistical data on how the visitor uses the website.',
         expiry: '2 years',
         type: 'HTTP',

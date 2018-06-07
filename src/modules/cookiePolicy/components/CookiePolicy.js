@@ -9,7 +9,6 @@ import {getDefaultPolicyValues, runWithCookiePolicies} from '../helpers'
 
 const CookieType = PropTypes.shape({
   name: PropTypes.string.isRequired,
-  provider: PropTypes.string.isRequired,
   purpose: PropTypes.string.isRequired,
   expiry: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
@@ -95,8 +94,7 @@ class CookiePolicy extends Component {
             <Table>
               <Thead>
                 <tr>
-                  <td>Name</td>
-                  <td>Provider</td>
+                  <td>Cookie(s)</td>
                   <td>Purpose</td>
                   <td>Expiry</td>
                   <td>Type</td>
@@ -106,7 +104,6 @@ class CookiePolicy extends Component {
                 {activePolicy.cookies.map((cookie, index) => (
                   <tr key={index}>
                     <td>{cookie.name}</td>
-                    <td>{cookie.provider}</td>
                     <td>{cookie.purpose}</td>
                     <td>{cookie.expiry}</td>
                     <td>{cookie.type}</td>
