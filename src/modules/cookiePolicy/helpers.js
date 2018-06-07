@@ -5,7 +5,7 @@ import {getLocalStorageValue} from '../../common/localStorage'
 export const getDefaultPolicyValues = policies => {
   const values = {}
 
-  policies.forEach(policy => (values[policy.value] = true))
+  policies.forEach(policy => values[policy.value] = true)
 
   return values
 }
