@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import compact from 'lodash/compact'
 
 import {Row, Content} from '../common/components/Grid'
@@ -7,9 +8,9 @@ import {Heading} from '../common/components/Typography'
 import Paper from '../common/components/Paper'
 import Spinner from '../common/components/Spinner'
 import {FadeIn} from '../common/styles/animations'
-import {loadAboutPage} from '../common/api'
+import {loadPrivacyPolicyPage} from '../common/api'
 
-class About extends Component {
+class PrivacyPolicy extends Component {
   state = {
     content: undefined,
   }
@@ -22,7 +23,7 @@ class About extends Component {
 
   loadContent = async () => {
     try {
-      const content = await loadAboutPage()
+      const content = await loadPrivacyPolicyPage()
 
       this.setState({content})
     } catch (e) {
@@ -50,6 +51,7 @@ class About extends Component {
                   <p key={index}>{paragraph}</p>
                 )
               }
+              <Link to="/">Back to food guide</Link>
             </Paper>
           </FadeIn>
         </Content>
@@ -58,4 +60,4 @@ class About extends Component {
   }
 }
 
-export default About
+export default PrivacyPolicy

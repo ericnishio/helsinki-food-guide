@@ -10,6 +10,7 @@ const Contentful = {
   },
   Pages: {
     ABOUT: '2Uqcv9yuQEIWoQu8SW4kAG',
+    PRIVACY_POLICY: '50lsWJZIyAOmKAEIKu0YAG',
   },
 }
 
@@ -57,3 +58,6 @@ const loadEntryById = async (id) => {
 
 export const loadAboutPage = () =>
   loadEntryById(Contentful.Pages.ABOUT)
+
+export const loadPrivacyPolicyPage = () =>
+  loadEntryById(Contentful.Pages.PRIVACY_POLICY)

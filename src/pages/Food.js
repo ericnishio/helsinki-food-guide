@@ -8,12 +8,14 @@ import Dish from '../common/components/Dish'
 import Spinner from '../common/components/Spinner'
 import {loadDishes} from '../common/api'
 
-class Home extends Component {
+class Food extends Component {
   state = {
     dishes: undefined,
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0)
+
     this.loadDishes()
   }
 
@@ -60,4 +62,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default Food

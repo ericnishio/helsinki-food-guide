@@ -2,12 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {injectGlobal} from 'styled-components'
 
-import App from './bootstrap/App'
+import Routes from './bootstrap/Routes'
 import registerServiceWorker from './bootstrap/registerServiceWorker'
 import {BACKGROUND_COLOR, TEXT_COLOR, LINK_COLOR} from './common/styles/colors'
 import {PRIMARY_FONT, MEDIUM_FONT_SIZE} from './common/styles/fonts'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<Routes />, document.getElementById('root'))
 
 registerServiceWorker()
 

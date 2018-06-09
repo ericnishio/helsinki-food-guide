@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 import {Row, Content} from '../../common/components/Grid'
 import {MOBILE_MAX_WIDTH} from '../styles/responsive'
@@ -23,6 +24,9 @@ const Footer = () =>
               <Email>
                 &#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#104;&#101;&#108;&#115;&#105;&#110;&#107;&#105;&#102;&#111;&#111;&#100;&#103;&#117;&#105;&#100;&#101;&#046;&#099;&#111;&#109;
               </Email>
+              <LinkText to="privacy">
+                Privacy Policy
+              </LinkText>
               <Badge>
                 <a href="https://www.contentful.com/" rel="nofollow noopener noreferrer" target="_blank">
                   <img
@@ -40,10 +44,11 @@ const Footer = () =>
 
 const PADDING = '100px'
 const PADDING_MOBILE = '50px'
+const FOOTER_TEXT_COLOR = '#c5c5c5'
 
 const Container = styled.div`
   background-color: #1f1f1f;
-  color: #c5c5c5;
+  color: ${FOOTER_TEXT_COLOR};
   font-weight: 300;
   margin-top: 140px;
   padding-top: ${PADDING}; padding-bottom: ${PADDING};
@@ -87,6 +92,12 @@ const Email = styled.span`
 
 const Badge = styled.span`
   margin-top: 25px;
+`
+
+const LinkText = styled(Link)`
+  color: ${FOOTER_TEXT_COLOR};
+  font-size: ${SMALL_FONT_SIZE};
+  margin-top: 10px;
 `
 
 export default Footer

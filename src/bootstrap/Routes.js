@@ -3,8 +3,9 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import AppBar from '../common/components/AppBar'
 import Footer from '../common/components/Footer'
-import Home from '../pages/Home'
+import Food from '../pages/Food'
 import About from '../pages/About'
+import PrivacyPolicy from '../pages/PrivacyPolicy'
 import NotFound from '../pages/NotFound'
 
 const Routes = () =>
@@ -12,8 +13,9 @@ const Routes = () =>
     <Fragment>
       <AppBar />
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Food} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/privacy" component={PrivacyPolicy} />
         <Route component={NotFound} />
       </Switch>
       <Footer />
