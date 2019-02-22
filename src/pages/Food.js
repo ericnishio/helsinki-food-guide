@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 import {FadeIn} from '../common/styles/animations'
 import {Row, Content} from '../common/components/Grid'
@@ -7,59 +7,38 @@ import {Heading} from '../common/components/Typography'
 import Dish from '../common/components/Dish'
 import Spinner from '../common/components/Spinner'
 import {loadDishes} from '../common/api'
+import {useContent} from '../common/helpers'
 
-class Food extends Component {
-  state = {
-    dishes: undefined,
+const Food = () => {
+  const dishes = useContent(loadDishes)
+
+  if (!dishes) {
+    return <Spinner centerOfViewport={true} />
   }
 
-  componentDidMount() {
-    window.scrollTo(0, 0)
-
-    this.loadDishes()
-  }
-
-  loadDishes = async () => {
-    try {
-      const dishes = await loadDishes()
-
-      this.setState({dishes})
-    } catch (e) {
-      window.alert('Server error')
-    }
-  }
-
-  render() {
-    const {dishes} = this.state
-
-    if (!dishes) {
-      return <Spinner centerOfViewport={true} />
-    }
-
-    return (
-      <Row>
-        <Content>
-          <FadeIn>
-            <Hero>
-              <Heading>
-                Know exactly what to order.<br />
-                Featuring only the best dishes in Helsinki.
-              </Heading>
-            </Hero>
-            {
-              dishes.map(dish =>
-                <Dish
-                  key={dish.id}
-                  dish={dish}
-                  restaurant={dish.restaurant}
-                />
-              )
-            }
-          </FadeIn>
-        </Content>
-      </Row>
-    )
-  }
+  return (
+    <Row>
+      <Content>
+        <FadeIn>
+          <Hero>
+            <Heading>
+              Know exactly what to order.<br />
+              Featuring only the best dishes in Helsinki.
+            </Heading>
+          </Hero>
+          {
+            dishes.map(dish =>
+              <Dish
+                key={dish.id}
+                dish={dish}
+                restaurant={dish.restaurant}
+              />
+            )
+          }
+        </FadeIn>
+      </Content>
+    </Row>
+  )
 }
 
 export default Food
