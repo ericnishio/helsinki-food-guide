@@ -23,12 +23,12 @@ const currencyToSymbol = (currency) => {
   }
 }
 
-export const useContent = (fetchContentAsync) => {
+export const useContent = (fetcher) => {
   const [content, setContent] = useState()
 
   const fetchContent = async () => {
     try {
-      setContent(await fetchContentAsync())
+      setContent(await fetcher())
     } catch (e) {
       window.alert('Server error')
     }
