@@ -6,11 +6,10 @@ import Hero from '../common/components/Hero'
 import {Heading} from '../common/components/Typography'
 import Dish from '../common/components/Dish'
 import Spinner from '../common/components/Spinner'
-import {loadDishes} from '../common/api'
-import {useContent} from '../common/helpers'
+import {useContentLoader, loadDishes} from '../common/api'
 
 const Food = () => {
-  const dishes = useContent(loadDishes)
+  const dishes = useContentLoader(loadDishes)
 
   if (!dishes) {
     return <Spinner centerOfViewport={true} />

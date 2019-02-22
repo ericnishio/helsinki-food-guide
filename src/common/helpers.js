@@ -1,5 +1,3 @@
-import {useState, useEffect} from 'react'
-
 export const formatPrice = (value, currency) =>
   `${value.toFixed(2)} ${currencyToSymbol(currency)}`
 
@@ -21,24 +19,4 @@ const currencyToSymbol = (currency) => {
     default:
       return currency
   }
-}
-
-export const useContent = (fetcher) => {
-  const [content, setContent] = useState()
-
-  const fetchContent = async () => {
-    try {
-      setContent(await fetcher())
-    } catch (e) {
-      window.alert('Server error')
-    }
-  }
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-
-    fetchContent()
-  }, [])
-
-  return content
 }

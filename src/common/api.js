@@ -1,7 +1,28 @@
+import {useState, useEffect} from 'react'
 import {createClient} from 'contentful'
 import sortBy from 'lodash/sortBy'
 
 import {setLocalStorageValue, getLocalStorageValue} from './localStorage'
+
+export const useContentLoader = (contentLoader) => {
+  const [content, setContent] = useState()
+
+  const loadContent = async () => {
+    try {
+      setContent(await contentLoader())
+    } catch (e) {
+      window.alert('Server error')
+    }
+  }
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+
+    loadContent()
+  }, [])
+
+  return content
+}
 
 const Contentful = {
   Api: {

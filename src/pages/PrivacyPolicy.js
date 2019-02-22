@@ -8,11 +8,10 @@ import {Heading} from '../common/components/Typography'
 import Paper from '../common/components/Paper'
 import Spinner from '../common/components/Spinner'
 import {FadeIn} from '../common/styles/animations'
-import {loadPrivacyPolicyPage} from '../common/api'
-import {useContent} from '../common/helpers'
+import {useContentLoader, loadPrivacyPolicyPage} from '../common/api'
 
 const PrivacyPolicy = () => {
-  const content = useContent(loadPrivacyPolicyPage)
+  const content = useContentLoader(loadPrivacyPolicyPage)
 
   if (!content) {
     return <Spinner centerOfViewport={true} />

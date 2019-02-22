@@ -7,11 +7,10 @@ import {Heading} from '../common/components/Typography'
 import Paper from '../common/components/Paper'
 import Spinner from '../common/components/Spinner'
 import {FadeIn} from '../common/styles/animations'
-import {loadAboutPage} from '../common/api'
-import {useContent} from '../common/helpers'
+import {useContentLoader, loadAboutPage} from '../common/api'
 
 const About = () => {
-  const content = useContent(loadAboutPage)
+  const content = useContentLoader(loadAboutPage)
 
   if (!content) {
     return <Spinner centerOfViewport={true} />
