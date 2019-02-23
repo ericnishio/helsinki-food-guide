@@ -5,6 +5,7 @@
   "homepage": "http://ericnishio.github.io/helsinki-food-guide",
   "dependencies": {
     "contentful": "^7.3.0",
+    "gh-pages": "^2.0.1",
     "lodash": "^4.17.11",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
