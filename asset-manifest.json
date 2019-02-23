@@ -1,14 +1,14 @@
 {
-  "main.js": "/helsinki-food-guide/static/js/main.812e83c3.chunk.js",
-  "main.js.map": "/helsinki-food-guide/static/js/main.812e83c3.chunk.js.map",
-  "runtime~main.js": "/helsinki-food-guide/static/js/runtime~main.78b88906.js",
-  "runtime~main.js.map": "/helsinki-food-guide/static/js/runtime~main.78b88906.js.map",
-  "static/js/2.02e386d4.chunk.js": "/helsinki-food-guide/static/js/2.02e386d4.chunk.js",
-  "static/js/2.02e386d4.chunk.js.map": "/helsinki-food-guide/static/js/2.02e386d4.chunk.js.map",
-  "index.html": "/helsinki-food-guide/index.html",
-  "precache-manifest.cb8b6346ee827c892d70c8de2f127a03.js": "/helsinki-food-guide/precache-manifest.cb8b6346ee827c892d70c8de2f127a03.js",
-  "service-worker.js": "/helsinki-food-guide/service-worker.js",
-  "static/media/broken-egg.png": "/helsinki-food-guide/static/media/broken-egg.779840af.png",
-  "static/media/logo.png": "/helsinki-food-guide/static/media/logo.b2562482.png",
-  "static/media/twitter.png": "/helsinki-food-guide/static/media/twitter.3d74e8bf.png"
+  "main.js": "/static/js/main.c33cf741.chunk.js",
+  "main.js.map": "/static/js/main.c33cf741.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
+  "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
+  "static/js/2.a5858cc6.chunk.js": "/static/js/2.a5858cc6.chunk.js",
+  "static/js/2.a5858cc6.chunk.js.map": "/static/js/2.a5858cc6.chunk.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.fded18f9b05ff6858525fbb42b50ef08.js": "/precache-manifest.fded18f9b05ff6858525fbb42b50ef08.js",
+  "service-worker.js": "/service-worker.js",
+  "static/media/broken-egg.png": "/static/media/broken-egg.779840af.png",
+  "static/media/logo.png": "/static/media/logo.b2562482.png",
+  "static/media/twitter.png": "/static/media/twitter.3d74e8bf.png"
 }
