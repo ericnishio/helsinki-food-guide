@@ -6,7 +6,8 @@ import Hero from '../common/components/Hero'
 import {Heading} from '../common/components/Typography'
 import Dish from '../common/components/Dish'
 import Spinner from '../common/components/Spinner'
-import {useContentLoader, loadDishes} from '../common/api'
+import {loadDishes} from '../common/api'
+import {useContentLoader} from '../common/hooks'
 
 const Food = () => {
   const dishes = useContentLoader(loadDishes)

@@ -7,7 +7,8 @@ import {Heading} from '../common/components/Typography'
 import Paper from '../common/components/Paper'
 import Spinner from '../common/components/Spinner'
 import {FadeIn} from '../common/styles/animations'
-import {useContentLoader, loadAboutPage} from '../common/api'
+import {loadAboutPage} from '../common/api'
+import {useContentLoader} from '../common/hooks'
 
 const About = () => {
   const content = useContentLoader(loadAboutPage)

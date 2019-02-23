@@ -8,7 +8,8 @@ import {Heading} from '../common/components/Typography'
 import Paper from '../common/components/Paper'
 import Spinner from '../common/components/Spinner'
 import {FadeIn} from '../common/styles/animations'
-import {useContentLoader, loadPrivacyPolicyPage} from '../common/api'
+import {loadPrivacyPolicyPage} from '../common/api'
+import {useContentLoader} from '../common/hooks'
 
 const PrivacyPolicy = () => {
   const content = useContentLoader(loadPrivacyPolicyPage)
