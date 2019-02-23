@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 
 import GlobalStyles from '../common/styles/GlobalStyle'
 import AppBar from '../common/components/AppBar'
