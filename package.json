@@ -2,7 +2,7 @@
   "name": "helsinki-food-guide",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://ericnishio.github.io/helsinki-food-guide",
+  "homepage": "https://helsinkifoodguide.com",
   "dependencies": {
     "contentful": "^7.3.0",
     "gh-pages": "^2.0.1",
